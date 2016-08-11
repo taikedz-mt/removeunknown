@@ -1,9 +1,3 @@
-local old_nodes = {
-	--OLD-NODES
-}
-local old_entities = {
-	--OLD-ENTITIES
-}
 
 for _,node_name in ipairs(old_nodes) do
     minetest.register_node(":"..node_name, {

@@ -1,12 +1,4 @@
 
-local replacement_nodes {
-	{"old:node","new:node"},
-}
-
-local replacement_entities {
-	{"old:entity","new:entity"},
-}
-
 -- ========== Perform node replacement when in range of a player
 
 for _,node_name in pairs(replacement_nodes) do
@@ -35,9 +27,3 @@ for _,entity_name in ipairs(replacement_entities) do
         end,
     })
 end
-
--- ========= Perform inventory item replacement
-
--- TODO can we do an interation over the player's inventory?
--- might need to be a tool which on use performs the action, so as not to be parsing inventories evey second
--- define a global "if no replacement defined" that gives a default item. Could be itemstakc, new tool, currency, etc
