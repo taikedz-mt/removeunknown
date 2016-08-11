@@ -2,7 +2,7 @@
 -- ========== Perform node replacement when in range of a player
 
 for _,node_name in pairs(replacement_nodes) do
-    minetest.register_alias(":"..node_name[1], {
+    minetest.register_node(":"..node_name[1], {
         groups = {old=1},
 	newnode = node_name[2],
     })
@@ -13,7 +13,8 @@ minetest.register_abm({
     interval = 1,
     chance = 1,
     action = function(pos, node)
-        minetest.env:remove_node(pos) -- TODO do a replacement to node's newnode
+        minetest.env:remove_node(pos)
+	minetest.set_node(pos, {name=self.newnode})
     end,
 })
 
@@ -22,6 +23,7 @@ minetest.register_abm({
 for _,entity_name in ipairs(replacement_entities) do
     minetest.register_entity(":"..entity_name[1], {
         on_activate = function(self, staticdata)
+	    minetest.chat_send_all(self.itemstring) -- does this include the count?
             self.object:remove()
 	    -- TODO add line to get numbers, spawn an entity stack
         end,
