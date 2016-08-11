@@ -1,0 +1,1 @@
+This mod replaces configured node and entity names with configured item, or removes them. Also provides a tool to manually perform replacements on inventory stacks.
