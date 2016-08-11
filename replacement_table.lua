@@ -1,9 +1,8 @@
 
-
-local replacement_nodes {
+replacement_nodes = {
 	{"old:node","new:node"},
 }
 
-local replacement_entities {
+replacement_entities = {
 	{"old:entity","new:entity"},
 }
