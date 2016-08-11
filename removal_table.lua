@@ -1,7 +1,8 @@
 
-local old_nodes = {
+old_nodes = {
 	--OLD-NODES
 }
-local old_entities = {
+
+old_entities = {
 	--OLD-ENTITIES
 }
